@@ -116,7 +116,100 @@ img {
     display: none;
 }
 
+.products .item .price {
+    font-size: 24px;
+    font-weight: 300px;
+}
 
+.products .item .addtocard button {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 50px;
+    border: 0;
+    outline: 0;
+    margin-right: -20px;
+    display: flex;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--white);
+    background-color: transparent;
+    cursor: pointer;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        border-radius: .5em;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50px;
+        height: 50px;
+        background-color: var(--primary);
+        transition: background-color .3s .2s;
+        overflow: hidden;
+    }
+}
+
+.products .item .addtocard button:hover::before {
+    background-color: var(--white);
+}
+
+.products .item .addtocard span {
+    transform: translateX(-20px);
+    opacity: 0;
+    transition: transform .3s, opacity .3s;
+}
+
+.products .item:hover .addtocard button span {
+    transform: translate(0);
+    opacity: 1;
+}
+
+.products .item .addtocard button i {
+    color: var(--white);
+    padding-right: 12px;
+    margin-left: 24px;
+    z-index: 10;
+}
+
+.products .item:hover .addtocard button i {
+    animation: motionArrow 1.2s infinite;
+}
+
+.products .item .addtocard button:hover i {
+    color: var(--primary);
+    animation: runArrow .5s forwards;
+}
+
+@keyframes runArrow {
+    33% {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+
+    66% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes motionArrow {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+}
 
 @keyframes motionProduct {
 
