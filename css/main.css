@@ -1,11 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
+:root {
+    --primary: hsl(3, 89%, 64%);
+    --secondary: hsl(310, 30%, 16%);
+    --white: hsl(0, 0%, 100%);
+    --bg-body: hsl(272, 62%, 8%);
+    --font: "DM Sans",
+        sans-serif;
+}
+
 
 * {
-    font-family: "DM Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+* ::before,
+::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font);
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 1em;
+    line-height: 1.8;
+    color: var(--white);
+    background-color: var(--bg-body);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+image {
+    max-width: 100%;
+    vertical-align: middle;
 }
