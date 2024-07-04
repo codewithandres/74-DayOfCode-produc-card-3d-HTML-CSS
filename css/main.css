@@ -36,7 +36,86 @@ a {
     color: inherit;
 }
 
-image {
+img {
     max-width: 100%;
     vertical-align: middle;
+}
+
+.site {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.products .item {
+    position: relative;
+    max-width: 350px;
+    padding: 30px;
+    background-color: var(--secondary);
+    box-shadow: 0 10px 36px 0 rgba(0 0 0 / 16%);
+}
+
+.products .item .brand {
+    height: 60px;
+    width: 60px;
+    background-image: url(../assets/294668_nike_icon.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.products .item .title h2 {
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.products .item:hover .imagen img {
+    animation: motionProduct 2000ms infinite;
+}
+
+@keyframes motionProduct {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(15px);
+    }
+}
+
+@media screen and (max-width: 5600px) {
+    .products .item .imagen {
+        transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .products .item .imagen img {
+        position: relative;
+    }
+
+    .products .item:hover .imagen {
+        transform: scale(1.25) translate3d(30%, -20%, 0);
+    }
+
+    .products .item .imagen::before {
+        content: '';
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        background-color: var(--primary);
+        border-radius: 50%;
+        top: 25%;
+        right: 20%;
+        filter: blur(90px);
+        opacity: 0;
+        transition: opacity 300ms ease;
+    }
+
+    .products .item:hover .imagen::before {
+        opacity: .75;
+
+    }
 }
